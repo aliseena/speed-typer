@@ -1,12 +1,12 @@
-## Speed Typer Typing Game
+## uTyper Typing Game
 
 Game to beat the clock by typing random words
 
 ## Project Specifications
 
-- Create game UI including a difficuly setting
+- DEMO - https://utyper.netlify.app/
+- Fetches 300 words from a fast API(can be extended from the url)
 - Generate random word and place in DOM
 - Score increase after word is typed
-- Implement timer
-- Add certain amount of time after word is typed based on difficulty
-- Store difficulty setting in local storage
+- Add your own custom time
+- Two different inputs for difficult level
