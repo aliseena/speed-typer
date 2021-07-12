@@ -62,10 +62,13 @@ async function randomWordGenerator() {
     // my custom time
     timeButton.addEventListener('click', () => {
       const customTime = +timeInput.value;
-      timeInput.value = '';
+
       if (initialTime.length === 2) initialTime.pop();
-      initialTime.push(customTime + 1);
-      time = initialTime[1];
+      if (timeInput.value !== '') {
+        initialTime.push(customTime + 1);
+        time = initialTime[1];
+      } else time = initialTime[0];
+      timeInput.value = '';
     });
     // timer function
     let interval = setInterval(() => updateTime(), 1000);
@@ -102,6 +105,8 @@ async function randomWordGenerator() {
       setTime();
       score = -1;
       text.focus();
+      text.value = '';
+      text2.value = '';
       interval = setInterval(() => updateTime(), 1000);
       updateScore();
     }
@@ -189,7 +194,7 @@ async function randomWordGenerator() {
       }
     });
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 }
 randomWordGenerator();
